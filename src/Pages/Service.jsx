@@ -66,13 +66,15 @@ const Service = () => {
           content="https://markodraft.com/img/brand.jpeg"
         />
 
-        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "Service",
-              "serviceType": "Construction Services",
+              "name": "Construction Service in Tirunelveli",
+              "url": "https://markodraft.com/service",
+              "serviceType": "Construction Service",
+              "description": "House construction, renovation, plumbing, electrical, exterior, interior design, and civil engineering services in Tirunelveli.",
               "provider": {
                 "@type": "HomeAndConstructionBusiness",
                 "name": "Markodraft Builders",
@@ -81,8 +83,7 @@ const Service = () => {
               "areaServed": {
                 "@type": "City",
                 "name": "Tirunelveli"
-              },
-              "description": "House construction, renovation, plumbing, electrical and interior design services in Tirunelveli."
+              }
             }
           `}
         </script>

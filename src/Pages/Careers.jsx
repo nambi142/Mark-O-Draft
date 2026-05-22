@@ -38,13 +38,10 @@ const Careers = () => {
           {`
             {
               "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Markodraft Builders",
-              "url": "https://markodraft.com",
-              "description": "Construction company hiring engineers and workers in Tirunelveli.",
-              "sameAs": [
-                "https://www.instagram.com/markodraftindia"
-              ]
+              "@type": "WebPage",
+              "name": "Markodraft Careers",
+              "url": "https://markodraft.com/careers",
+              "description": "Construction jobs and internships in Tirunelveli."
             }
           `}
         </script>

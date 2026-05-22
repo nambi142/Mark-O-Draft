@@ -71,26 +71,22 @@ const Contact = () => {
         />
 
         <script type="application/ld+json">
-         {`
-           {
+          {`
+            {
               "@context": "https://schema.org",
               "@type": "ContactPage",
               "name": "Contact Markodraft Builders",
               "url": "https://markodraft.com/contact",
+              "description": "Contact Markodraft Builders for construction services in Tirunelveli.",
               "mainEntity": {
-                "@type": "HomeAndConstructionBusiness",
+                "@type": "Organization",
                 "name": "Markodraft Builders",
+                "url": "https://markodraft.com",
                 "telephone": "+918190859587",
-                "email": "markodraftindia@gmail.com",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Tirunelveli",
-                  "addressRegion": "Tamil Nadu",
-                  "addressCountry": "IN"
-                }
+                "email": "markodraftindia@gmail.com"
               }
             }
-         `}     
+          `}
         </script>
       </Helmet>
 
