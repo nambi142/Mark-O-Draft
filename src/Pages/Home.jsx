@@ -17,10 +17,10 @@ const Home = () => {
   };
 
   const heroImages = [
-    "public/img/background/backgroundimg1.jpeg",
-    "public/img/background/backgroundimg2.jpeg",
-    "public/img/background/backgroundimg3.jpeg",
-    "public/img/background/backgroundimg4.jpeg",
+    "/img/background/backgroundimg1.jpeg",
+    "/img/background/backgroundimg2.jpeg",
+    "/img/background/backgroundimg3.jpeg",
+    "/img/background/backgroundimg4.jpeg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
