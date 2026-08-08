@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import "../Css/Home.css";
 import { FaTools, FaClock, FaUsers, FaHome } from "react-icons/fa";
@@ -16,15 +16,32 @@ const Home = () => {
     setMuted(video.muted);
   };
 
+  const heroImages = [
+    "public/img/background/backgroundimg1.jpeg",
+    "public/img/background/backgroundimg2.jpeg",
+    "public/img/background/backgroundimg3.jpeg",
+    "public/img/background/backgroundimg4.jpeg",
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const projects = [
     {
       img: "/project-img/IMG20240729131020.jpg",
-      title: "Eenovation & Remodelling",
+      title: "Renovation & Remodelling",
       category: "Interior | Design",
     },
     {
       img: "/project-img/shed-works-ground.jpg",
-      title: "Roofing Shed Fabrication Work (ALT)Shed Work",
+      title: "Roofing Shed Fabrication Work Shed Work",
       category: "Architecture | Landscape",
     },
     {
@@ -38,9 +55,7 @@ const Home = () => {
     <div>
       {/* SEO Optimization */}
       <Helmet>
-        <title>
-          Markodraft Builders & Construction | Tirunelveli
-        </title>
+        <title>Markodraft Builders & Construction | Tirunelveli</title>
 
         <meta
           name="description"
@@ -94,29 +109,16 @@ const Home = () => {
         </script>
       </Helmet>
 
-      {/* ---------- HERO VIDEO ---------- */}
+      {/* ---------- HERO IMAGE SLIDESHOW ---------- */}
       <div className="home-hero">
-        <video
-          ref={videoRef}
-          className="bg-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="\video\MarkODraftBgVideo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        {/* Volume Toggle Button */}
-        <button
-          type="button"
-          className="volume-btn"
-          onClick={toggleMute}
-          aria-label={muted ? "Unmute" : "Mute"}
-        >
-          {muted ? <HiVolumeOff /> : <HiVolumeUp />}
-        </button>
+        {heroImages.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Construction slide ${index + 1}`}
+            className={`bg-slide ${index === currentSlide ? "active" : ""}`}
+          />
+        ))}
       </div>
 
       {/* ---------- FEATURES SECTION ---------- */}
