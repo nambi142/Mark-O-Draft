@@ -23,6 +23,13 @@ const Home = () => {
     "/img/background/backgroundimg4.jpeg",
   ];
 
+  const mobileHeroImages = [
+    "/img/background/mobilebackground1.jpeg",
+    "/img/background/mobilebackground3.jpeg",
+    "/img/background/mobilebckground2.jpeg",
+    "/img/background/mobilebackground1.jpeg",
+  ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -109,15 +116,20 @@ const Home = () => {
         </script>
       </Helmet>
 
-      {/* ---------- HERO IMAGE SLIDESHOW ---------- */}
       <div className="home-hero">
         {heroImages.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Construction slide ${index + 1}`}
-            className={`bg-slide ${index === currentSlide ? "active" : ""}`}
-          />
+          <picture key={index}>
+            <source
+              media="(max-width: 768px)"
+              srcSet={mobileHeroImages[index]}
+            />
+
+            <img
+              src={img}
+              alt={`Construction slide ${index + 1}`}
+              className={`bg-slide ${index === currentSlide ? "active" : ""}`}
+            />
+          </picture>
         ))}
       </div>
 
