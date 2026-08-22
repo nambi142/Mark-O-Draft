@@ -17,8 +17,8 @@ const Home = () => {
   };
 
   const heroImages = [
-    "/img/background/backgroundimg1.jpeg",
-    "/img/background/backgroundimg2.jpeg",
+    "/img/background/background1.jpeg",
+    "/img/background/background2.jpeg",
     "/img/background/backgroundimg3.jpeg",
     "/img/background/backgroundimg4.jpeg",
   ];
